@@ -1,0 +1,18 @@
+version: 3
+projects:
+- name: dev
+  dir: .
+  workflow: dev
+  # repo_allowlist:
+  #   - "github.com/devopshubproject/tf-gitops-atlantis"
+  autoplan:
+    enabled: true
+  apply_requirements: [approved]
+workflows:
+  dev:
+    plan:
+      steps:
+        - init
+        - plan
+
+
